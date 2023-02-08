@@ -2,9 +2,9 @@
 
 $bd_host = "192.168.20.18";
 $sgbd = "pgsql";
-$base_de_dados = "loisteston";
-$bd_usuario = "loisteston";
-$bd_senha = "123456";
+$base_de_dados = "PostgreSQL";
+$bd_usuario = "postgres";
+$bd_senha = "postgres";
 
 switch ($sgbd) {
     case "mysql":
@@ -32,7 +32,7 @@ switch ($sgbd) {
         break;
     case "sqlite":
 
-		$conn = new PDO('sqlite:./sql/catalogo_de_games.sqlite3');
+		$conn = new PDO('sqlite:./sql/keepRecipe.sqlite3');
 		// Set errormode to exceptions
 		$conn->setAttribute(PDO::ATTR_ERRMODE, 
 									PDO::ERRMODE_EXCEPTION);
