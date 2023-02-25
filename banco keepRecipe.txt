@@ -1,0 +1,42 @@
+CREATE TABLE usuario(
+	id_usuario integer not null,
+	nm_usuario varchar(50) not null,
+	senha_usuario integer not null
+)
+
+ALTER TABLE usuario ADD CONSTRAINT pk_id_usuario PRIMARY KEY (id_usuario);
+
+CREATE TABLE receitas(
+	id_receita integer not null,
+	id_usuario integer not null,
+	nm_receita varchar(50) not null,
+	desc_receita varchar(200) not null,33
+	data_hora timestamp
+)
+
+ALTER TABLE receitas ADD CONSTRAINT pk_id_receita PRIMARY KEY (id_usuario);
+
+ALTER TABLE receitas ADD CONSTRAINT fk_id_usuario_receitas FOREIGN KEY (id_usuario) REFERENCES usuario;
+
+CREATE TABLE ingredientes(
+	codigo integer not null,
+	ingrediente varchar(50) not null
+)
+
+ALTER TABLE ingredientes ADD CONSTRAINT pk_codigo_ingredientes PRIMARY KEY (codigo);
+
+
+CREATE TABLE ingredientes_receita(
+	id_receita integer not null,
+	cod_ingrediente integer not null
+)
+
+ALTER TABLE ingredientes_receita ADD CONSTRAINT pk_ingredientes_receita PRIMARY KEY (id_receita, cod_ingrediente);
+
+ALTER TABLE ingredientes_receita ADD CONSTRAINT fk_cod_ingrediente_ingredientes_receita FOREIGN KEY (cod_ingrediente) REFERENCES ingredientes;
+
+ALTER TABLE ingredientes_receita ADD CONSTRAINT fk_id_receita_ingredientes_receita FOREIGN KEY (id_receita) REFERENCES receitas;
+
+
+
+

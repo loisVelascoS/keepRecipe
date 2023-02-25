@@ -1,114 +1,167 @@
 #menuToggle{
-   display: block;
-   position: relative;
-   top: 50px;
-   left: 50px;
-   z-index: 1;
-   -webkit-user-select: none;
-   user-select: none;
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a{
+  text-decoration: none;
+  color: #50171f;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover{
+  color: #afddec;
+}
+
+#menuToggle input{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Hamburguer
+ */
+#menuToggle span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #afddec;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Crossmark transform
+ */
+#menuToggle input:checked ~ span{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #afddec;
+}
+
+ #menuToggle input:checked ~ span:nth-last-child(3){
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
  }
- 
- #menuToggle a{
-   text-decoration: none;
-   color: #50171f;
-   
-   transition: color 0.3s ease;
+
+#menuToggle input:checked ~ span:nth-last-child(2){
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  border-radius: 10%;
+  
+  background: #b35965;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+.quadro {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 50%;
+ padding: 40px;
+ transform: translate(-50%, -50%);
+ background-color: #f85d72c7;
+ box-shadow: 5px 5px 15px rgba(24, 24, 24, 0.7);
+ border-radius: 10px;
+ z-index: 999;
  }
- 
- #menuToggle a:hover{
-   color: #afddec;
+
+.quadro h2 {
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ color: #afddec;
+ font-size: 22px;
+ text-align: center;
  }
- 
- #menuToggle input{
-   display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-   
-   cursor: pointer;
-   
-   opacity: 0; 
-   z-index: 2; 
-   
-   -webkit-touch-callout: none;
+
+ table{
+   width:100%;
+   table-layout: fixed;
  }
- 
- /*
-  * Hamburguer
-  */
- #menuToggle span{
-   display: block;
-   width: 33px;
-   height: 4px;
-   margin-bottom: 5px;
-   position: relative;
-   
-   background: #afddec;
-   border-radius: 3px;
-   
-   z-index: 1;
-   
-   transform-origin: 4px 0px;
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               opacity 0.55s ease;
- }
- 
- #menuToggle span:first-child{
-   transform-origin: 0% 0%;
- }
- 
- #menuToggle span:nth-last-child(2){
-   transform-origin: 0% 100%;
- }
- 
- /* 
-  * Crossmark transform
-  */
- #menuToggle input:checked ~ span{
-   opacity: 1;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #afddec;
- }
- 
-  #menuToggle input:checked ~ span:nth-last-child(3){
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
+ .tbl-header{
+   background-color: rgba(255,255,255,0.3);
+   border-radius: 5px;
   }
-
- #menuToggle input:checked ~ span:nth-last-child(2){
-   transform: rotate(-45deg) translate(0, -1px);
+ .tbl-content{
+   height:300px;
+   overflow-x:auto;
+   margin-top: 0px;
+   border: 1px solid rgba(255,255,255,0.3);
+   border-radius: 5px;
  }
- 
-
- #menu{
-   position: absolute;
-   width: 300px;
-   margin: -100px 0 0 -50px;
-   padding: 50px;
-   padding-top: 125px;
-   border-radius: 10%;
-   
-   background: #b35965;
-   list-style-type: none;
-   -webkit-font-smoothing: antialiased;
-   
-   transform-origin: 0% 0%;
-   transform: translate(-100%, 0);
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ th{
+   padding: 20px 15px;
+   text-align: left;
+   font-weight: 500;
+   font-size: 12px;
+   color: #fff;
+   text-transform: uppercase;
  }
- 
- #menu li
- {
-   padding: 10px 0;
-   font-size: 22px;
- }
- 
- #menuToggle input:checked ~ ul
- {
-   transform: none;
+ td{
+   padding: 15px;
+   text-align: left;
+   vertical-align:middle;
+   font-weight: 300;
+   font-size: 12px;
+   color: #fff;
+   border-bottom: solid 1px rgba(255,255,255,0.1);
  }
