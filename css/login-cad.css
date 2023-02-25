@@ -89,3 +89,30 @@ body {
   .login-box a:active {
     top: 2px;
   }
+
+  .login-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 2px 15px;
+    color: #afddec;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+  
+  .login-box button:hover {
+    color: #ff4fa1;
+  }
+  .login-box button:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  .login-box button:active {
+    top: 2px;
+  }
